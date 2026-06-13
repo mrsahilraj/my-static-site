@@ -358,8 +358,11 @@ if (process.env.NODE_ENV === 'production') {
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = path.dirname(__filename)
   const distDir = path.resolve(__dirname, '..', 'dist')
+
   app.use(express.static(distDir))
-  app.get('*', (req, res) => {
+
+  // Express 5 compatible fallback route
+  app.use((req, res) => {
     res.sendFile(path.join(distDir, 'index.html'))
   })
 }
