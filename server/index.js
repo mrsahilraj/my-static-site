@@ -26,10 +26,14 @@ app.use(cookieParser())
 
 function isAllowedOrigin(origin) {
   if (!origin) return false
-  return (
-    /^http:\/\/localhost:\d+$/.test(origin) ||
-    /^http:\/\/127\.0\.0\.1:\d+$/.test(origin)
-  )
+
+  const allowedOrigins = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'https://sparkling-scone-ff231d.netlify.app'
+  ]
+
+  return allowedOrigins.includes(origin)
 }
 
 app.use((req, res, next) => {
