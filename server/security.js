@@ -26,9 +26,10 @@ export function verifyToken({ secret, token }) {
 
 export function cookieOptions() {
   const secure = process.env.NODE_ENV === 'production'
+
   return {
     httpOnly: true,
-    sameSite: 'lax',
+    sameSite: secure ? 'none' : 'lax',
     secure,
     path: '/',
   }
