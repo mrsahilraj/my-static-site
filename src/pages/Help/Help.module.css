@@ -1,0 +1,342 @@
+/* Help Center Page Styles */
+
+.page {
+  width: 100%;
+  padding: 32px 24px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HERO AREA */
+.hero {
+  text-align: center;
+  padding: 60px 0 60px;
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 900;
+  color: #1a0f0a;
+  margin: 0 0 16px;
+}
+
+.heroSubtitle {
+  font-size: 18px;
+  color: rgba(26, 15, 10, 0.7);
+  margin: 0 0 32px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* FAQ SECTION */
+.faqSection {
+  margin-bottom: 72px;
+}
+
+.faqHeader {
+  margin-bottom: 32px;
+}
+
+.faqTitle {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1a0f0a;
+  margin: 0 0 20px;
+}
+
+.faqCategories {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.faqCategory {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1px solid rgba(90, 68, 44, 0.2);
+  background: white;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(26, 15, 10, 0.7);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.faqCategory:hover {
+  border-color: rgba(168, 112, 43, 0.4);
+  background: rgba(168, 112, 43, 0.05);
+}
+
+.faqCategoryActive {
+  background: #a8702b;
+  border-color: #a8702b;
+  color: white;
+}
+
+.faqCategoryActive:hover {
+  background: #946225;
+  border-color: #946225;
+}
+
+.faqContent {
+  background: white;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* CONTACT SUPPORT AREA */
+.supportSection {
+  margin-bottom: 72px;
+}
+
+.supportHeader {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.supportTitle {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1a0f0a;
+  margin: 0 0 12px;
+}
+
+.supportDescription {
+  font-size: 16px;
+  color: rgba(26, 15, 10, 0.7);
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.supportCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.supportCard {
+  background: white;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  border-radius: 20px;
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(90, 68, 44, 0.04);
+}
+
+.supportCard:hover {
+  border-color: rgba(168, 112, 43, 0.4);
+  box-shadow: 0 12px 32px rgba(90, 68, 44, 0.1);
+  transform: translateY(-4px);
+}
+
+.supportCardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(168, 112, 43, 0.1) 0%, rgba(251, 247, 240, 1) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.supportCardTitle {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1a0f0a;
+  margin: 0;
+}
+
+.supportCardDesc {
+  font-size: 14px;
+  color: rgba(26, 15, 10, 0.7);
+  margin: 0;
+  line-height: 1.7;
+  flex: 1;
+}
+
+.supportCardBtn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* QUICK LINKS */
+.quickLinksSection {
+  margin-bottom: 72px;
+}
+
+.quickLinksTitle {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1a0f0a;
+  margin: 0 0 24px;
+}
+
+.quickLinksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.quickLinkCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: white;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  border-radius: 12px;
+  color: #1a0f0a;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.quickLinkCard:hover {
+  border-color: rgba(168, 112, 43, 0.4);
+  background: rgba(168, 112, 43, 0.05);
+  box-shadow: 0 4px 16px rgba(90, 68, 44, 0.08);
+  transform: translateY(-2px);
+}
+
+/* CTA / EMPTY STATE */
+.ctaSection {
+  margin-bottom: 24px;
+}
+
+.ctaCard {
+  background: linear-gradient(135deg, #1a0f0a 0%, #2a1810 100%);
+  border-radius: 24px;
+  padding: 48px;
+  text-align: center;
+  color: white;
+}
+
+.ctaTitle {
+  font-size: 28px;
+  font-weight: 900;
+  margin: 0 0 12px;
+}
+
+.ctaDescription {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 28px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.ctaCard button {
+  background: white;
+  color: #1a0f0a;
+}
+
+.ctaCard button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* MODAL */
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modalNote {
+  text-align: center;
+  font-size: 12px;
+  color: rgba(26, 15, 10, 0.5);
+  margin: 4px 0 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .page {
+    padding: 24px 16px 24px;
+  }
+
+  .hero {
+    padding: 32px 0 32px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroSubtitle {
+    font-size: 15px;
+  }
+
+
+
+  .faqTitle {
+    font-size: 22px;
+  }
+
+  .faqCategories {
+    gap: 8px;
+  }
+
+  .faqCategory {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .supportTitle {
+    font-size: 22px;
+  }
+
+  .supportCards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .supportCard {
+    padding: 28px 22px 22px;
+  }
+
+  .supportCardIcon {
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
+  }
+
+  .supportCardTitle {
+    font-size: 18px;
+  }
+
+  .ctaCard {
+    padding: 40px 24px;
+  }
+
+  .ctaTitle {
+    font-size: 22px;
+  }
+
+  .quickLinksGrid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}

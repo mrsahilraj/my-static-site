@@ -1,0 +1,40 @@
+.root {
+  display: grid;
+  gap: 12px;
+}
+
+.list {
+  display: flex;
+  gap: 10px;
+  overflow: auto hidden;
+  padding: 6px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tab {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 9px 12px;
+  white-space: nowrap;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-strong);
+}
+
+.tabActive {
+  background: linear-gradient(180deg, rgba(214, 180, 124, 0.85), rgba(192, 144, 74, 0.85));
+  color: rgba(16, 12, 18, 0.92);
+}
+
+.panel {
+  border-radius: var(--radius-lg);
+}
+

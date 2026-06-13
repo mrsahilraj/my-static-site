@@ -1,0 +1,72 @@
+.root {
+  display: block;
+}
+
+.item {
+  border-bottom: 1px solid rgba(90, 68, 44, 0.12);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.summary {
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  user-select: none;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.summary:hover {
+  background: rgba(168, 112, 43, 0.03);
+}
+
+.q {
+  font-weight: 800;
+  color: #1a0f0a;
+  font-size: 15px;
+}
+
+.chev {
+  color: rgba(26, 15, 10, 0.5);
+  transition: transform 0.2s ease;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.item[data-open="true"] .chev {
+  transform: rotate(180deg);
+}
+
+.content {
+  padding: 0 20px 20px;
+  overflow: hidden;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.a {
+  margin: 0;
+  color: rgba(26, 15, 10, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+}

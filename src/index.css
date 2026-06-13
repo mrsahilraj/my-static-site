@@ -1,0 +1,171 @@
+:root {
+  --bg: #f3ebde;
+  --surface: #f7f1e7;
+  --surface-2: rgba(247, 241, 231, 0.86);
+  --text: rgba(44, 34, 24, 0.78);
+  --text-strong: rgba(34, 26, 18, 0.94);
+  --muted: rgba(44, 34, 24, 0.58);
+  --border: rgba(90, 68, 44, 0.16);
+  --shadow: 0 18px 50px rgba(40, 28, 16, 0.18);
+  --shadow-soft: 0 10px 22px rgba(40, 28, 16, 0.12);
+
+  --brand: #a8702b;
+  --brand-2: #8c5c22;
+  --danger: #c23d4d;
+
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+
+  --container: 1120px;
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #13100c;
+    --surface: rgba(255, 255, 255, 0.06);
+    --surface-2: rgba(255, 255, 255, 0.08);
+    --text: rgba(255, 255, 255, 0.75);
+    --text-strong: rgba(255, 255, 255, 0.92);
+    --muted: rgba(255, 255, 255, 0.55);
+    --border: rgba(255, 255, 255, 0.14);
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+    --shadow-soft: 0 10px 22px rgba(0, 0, 0, 0.28);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 124px;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+:where(
+  a[href],
+  button:not(:disabled),
+  summary,
+  select,
+  [role='button']:not([aria-disabled='true']),
+  [role='tab']:not([aria-disabled='true']),
+  input[type='button']:not(:disabled),
+  input[type='submit']:not(:disabled),
+  input[type='reset']:not(:disabled),
+  input[type='checkbox']:not(:disabled),
+  input[type='radio']:not(:disabled),
+  input[type='file']:not(:disabled)
+) {
+  cursor: pointer;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease,
+    transform 160ms ease;
+}
+
+:where(
+  button:disabled,
+  select:disabled,
+  input[type='button']:disabled,
+  input[type='submit']:disabled,
+  input[type='reset']:disabled,
+  input[type='checkbox']:disabled,
+  input[type='radio']:disabled,
+  input[type='file']:disabled,
+  [role='button'][aria-disabled='true'],
+  [role='tab'][aria-disabled='true']
+) {
+  cursor: not-allowed;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(168, 112, 43, 0.25);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+#main-content,
+#about,
+#services,
+#select-studio,
+#studios-grid,
+#studios,
+#gallery,
+#pricing,
+#contact {
+  scroll-margin-top: 124px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@media (max-width: 859px) {
+  html {
+    scroll-padding-top: 92px;
+  }
+
+  #main-content,
+  #about,
+  #services,
+  #select-studio,
+  #studios-grid,
+  #studios,
+  #gallery,
+  #pricing,
+  #contact {
+    scroll-margin-top: 92px;
+  }
+}

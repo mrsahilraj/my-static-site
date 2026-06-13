@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="none" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="ring" x1="14" y1="8" x2="52" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f0d89a" />
+      <stop offset="0.46" stop-color="#cfa24f" />
+      <stop offset="1" stop-color="#a8742b" />
+    </linearGradient>
+    <radialGradient
+      id="glow"
+      cx="0"
+      cy="0"
+      r="1"
+      gradientUnits="userSpaceOnUse"
+      gradientTransform="translate(32 20) rotate(90) scale(32)"
+    >
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.14" />
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.06" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <circle cx="32" cy="32" r="30" fill="#070707" />
+  <circle cx="32" cy="32" r="30" fill="url(#glow)" />
+  <circle cx="32" cy="32" r="29" stroke="url(#ring)" stroke-width="2.4" />
+  <circle cx="32" cy="32" r="24" stroke="rgba(255,255,255,0.12)" stroke-width="1.2" />
+
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.98">
+    <circle cx="32" cy="24" r="12" stroke="rgba(255,255,255,0.55)" stroke-width="3.2" />
+    <circle cx="24.7" cy="38" r="12" stroke="rgba(255,255,255,0.55)" stroke-width="3.2" />
+    <circle cx="39.3" cy="38" r="12" stroke="rgba(255,255,255,0.55)" stroke-width="3.2" />
+    <path
+      d="M32 22.4c5.6 0 10.2 4.6 10.2 10.2S37.6 42.8 32 42.8 21.8 38.2 21.8 32.6 26.4 22.4 32 22.4Z"
+      stroke="rgba(255,255,255,0.18)"
+      stroke-width="2.2"
+    />
+  </g>
+</svg>

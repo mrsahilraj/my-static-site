@@ -1,0 +1,737 @@
+.hero {
+  display: grid;
+  gap: 0;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #f6f2ed;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  border-top: 0;
+  overflow: hidden;
+}
+
+.visualPanel {
+  position: relative;
+  min-height: 560px;
+  background: #180d08;
+}
+
+.visualMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.sceneSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.visualOverlay {
+  position: relative;
+  z-index: 1;
+  min-height: 560px;
+  padding: 98px 72px 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(90deg, rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.22) 54%, rgba(0, 0, 0, 0.4)),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.16), rgba(0, 0, 0, 0.58));
+}
+
+.profileDock {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  z-index: 4;
+  width: auto;
+  max-width: min(100%, 292px);
+}
+
+.profileButton {
+  width: auto;
+  min-width: 236px;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px 10px 10px;
+  border-radius: 18px;
+  border: 1px solid rgba(226, 196, 157, 0.18);
+  background:
+    linear-gradient(180deg, rgba(34, 22, 16, 0.56), rgba(23, 14, 10, 0.72)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.2);
+  transition:
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.profileButton:hover {
+  border-color: rgba(216, 177, 125, 0.26);
+  background:
+    linear-gradient(180deg, rgba(39, 26, 18, 0.62), rgba(28, 18, 13, 0.78)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 18px 28px rgba(0, 0, 0, 0.24);
+  transform: translateY(-1px);
+}
+
+.profileButtonGlow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(216, 170, 111, 0.05), transparent 38%, rgba(216, 170, 111, 0.02));
+  pointer-events: none;
+}
+
+.profileAvatar {
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #d7b17d, #9e672d);
+  color: #1b120d;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.26);
+  font-size: 13px;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+.profileButtonMeta {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+
+.profileButtonLabel {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.profileButtonName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.profileButtonIcon {
+  position: relative;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.profileMenu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(100vw - 24px, 320px);
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  background: rgba(247, 241, 231, 0.96);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top right;
+  transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease;
+}
+
+.profileMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.profileMenuItem {
+  width: 100%;
+  display: grid;
+  gap: 4px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  color: #24150c;
+}
+
+.profileMenuItem:hover {
+  background: rgba(168, 112, 43, 0.08);
+}
+
+.profileMenuTitle {
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.profileMenuSub {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(36, 21, 12, 0.58);
+}
+
+.profileMenuLogout {
+  color: #8f2d2d;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.72);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.28);
+}
+
+.logoSvg {
+  width: 40px;
+  height: 40px;
+}
+
+.brandText {
+  display: grid;
+  gap: 4px;
+}
+
+.brandName {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.96);
+  font-size: clamp(32px, 5vw, 64px);
+  font-weight: 950;
+  letter-spacing: -0.8px;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.brandSub {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(16px, 1.8vw, 30px);
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.script {
+  margin: 0;
+  color: #d2a564;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(22px, 2.3vw, 34px);
+}
+
+.description {
+  max-width: 620px;
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.highlights {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 980px;
+}
+
+.highlight {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.highlightIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(212, 165, 100, 0.42);
+  background: rgba(255, 255, 255, 0.05);
+  color: #d2a564;
+}
+
+.highlightIcon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.highlightTitle,
+.highlightSub {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.highlightSub {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.trustBar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  background: #fff;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  border-top: 0;
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border-right: 1px solid rgba(90, 68, 44, 0.1);
+}
+
+.trustItem:last-child {
+  border-right: 0;
+}
+
+.trustIcon {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(176, 122, 60, 0.08);
+  color: #9f6a2c;
+}
+
+.trustIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.trustText {
+  display: grid;
+  gap: 4px;
+}
+
+.trustTitle {
+  color: #24150c;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.trustSub {
+  color: rgba(36, 21, 12, 0.58);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.profileModal {
+  display: grid;
+  gap: 18px;
+}
+
+.profileModalTabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.profileTab {
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  background: rgba(255, 255, 255, 0.62);
+  color: rgba(36, 21, 12, 0.68);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.profileTabActive {
+  background: linear-gradient(180deg, #7a3c12, #5d290d);
+  border-color: #7a3c12;
+  color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 24px rgba(93, 41, 13, 0.16);
+}
+
+.profilePanels,
+.profileForm {
+  display: grid;
+  gap: 18px;
+}
+
+.profileHero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(251, 247, 240, 0.88));
+  border: 1px solid rgba(90, 68, 44, 0.12);
+}
+
+.profileHeroAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, #d7b17d, #9e672d);
+  color: #1b120d;
+  font-size: 20px;
+  font-weight: 950;
+}
+
+.profileHeroMeta {
+  display: grid;
+  gap: 6px;
+}
+
+.profileHeroTitle {
+  color: #24150c;
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.profileHeroSub {
+  color: rgba(36, 21, 12, 0.58);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.profileInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.profileInfoCard {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(90, 68, 44, 0.12);
+}
+
+.profileInfoLabel {
+  color: rgba(36, 21, 12, 0.52);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.profileInfoValue {
+  margin-top: 8px;
+  color: #24150c;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.profileFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.profileField {
+  display: grid;
+  gap: 8px;
+}
+
+.profileField:last-child {
+  grid-column: 1 / -1;
+}
+
+.profileField span {
+  color: rgba(36, 21, 12, 0.6);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.profileField input {
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(90, 68, 44, 0.14);
+  background: rgba(255, 255, 255, 0.84);
+  color: #24150c;
+  outline: none;
+}
+
+.profileField input:focus {
+  border-color: rgba(168, 112, 43, 0.42);
+  box-shadow: 0 0 0 3px rgba(168, 112, 43, 0.12);
+}
+
+.profileActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.profileError,
+.profileSuccess {
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.profileError {
+  background: rgba(194, 61, 77, 0.08);
+  color: #9e2d2d;
+  border: 1px solid rgba(194, 61, 77, 0.14);
+}
+
+.profileSuccess {
+  background: rgba(88, 125, 78, 0.1);
+  color: #385230;
+  border: 1px solid rgba(88, 125, 78, 0.14);
+}
+
+.accountBox {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(168, 112, 43, 0.08);
+  border: 1px solid rgba(168, 112, 43, 0.12);
+}
+
+.accountTitle {
+  color: #24150c;
+  font-size: 15px;
+  font-weight: 950;
+}
+
+.accountText {
+  margin-top: 8px;
+  color: rgba(36, 21, 12, 0.62);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .visualOverlay {
+    padding-inline: 28px;
+  }
+}
+
+@media (max-width: 860px) {
+  .visualPanel,
+  .visualOverlay {
+    min-height: 460px;
+  }
+  .visualOverlay {
+    padding: 88px 18px 24px;
+  }
+  .profileDock {
+    top: 16px;
+    right: 16px;
+    max-width: min(calc(100% - 32px), 274px);
+  }
+  .profileButton {
+    min-width: 220px;
+    padding: 9px 11px 9px 9px;
+  }
+  .brand {
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+  .logoSvg {
+    width: 34px;
+    height: 34px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .highlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .trustBar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .trustItem:nth-child(2) {
+    border-right: 0;
+  }
+  .trustItem:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(90, 68, 44, 0.1);
+  }
+  .profileInfoGrid,
+  .profileFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .visualOverlay {
+    min-height: 500px;
+  }
+  .profileDock {
+    right: 12px;
+    top: 12px;
+    max-width: min(calc(100% - 24px), 252px);
+  }
+  .profileButton {
+    min-width: 0;
+    gap: 8px;
+    padding-right: 10px;
+  }
+  .profileAvatar {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+  .profileButtonName {
+    font-size: 12px;
+  }
+  .profileButtonLabel {
+    font-size: 10px;
+  }
+  .trustBar {
+    grid-template-columns: 1fr;
+  }
+  .trustItem {
+    border-right: 0;
+    border-bottom: 1px solid rgba(90, 68, 44, 0.1);
+  }
+  .trustItem:last-child {
+    border-bottom: 0;
+  }
+  .profileMenu {
+    width: 100%;
+  }
+  .profileHero {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+  .profileActions {
+    justify-content: stretch;
+  }
+  .profileActions > * {
+    width: 100%;
+  }
+}
+
+/* OTP Modal */
+.otpModal {
+  display: grid;
+  gap: 18px;
+}
+
+.otpInfo {
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(168, 112, 43, 0.06);
+  border: 1px solid rgba(168, 112, 43, 0.12);
+}
+
+.otpMobile {
+  color: #24150c;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.otpDebug {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  color: rgba(36, 21, 12, 0.7);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.otpField {
+  display: grid;
+  gap: 8px;
+}
+
+.otpField span {
+  color: rgba(36, 21, 12, 0.6);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.otpField input {
+  min-height: 52px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(90, 68, 44, 0.14);
+  background: rgba(255, 255, 255, 0.84);
+  color: #24150c;
+  outline: none;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+.otpField input:focus {
+  border-color: rgba(168, 112, 43, 0.42);
+  box-shadow: 0 0 0 3px rgba(168, 112, 43, 0.12);
+}
+
+.otpError {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(194, 61, 77, 0.08);
+  color: #9e2d2d;
+  border: 1px solid rgba(194, 61, 77, 0.14);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.otpActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+@media (max-width: 560px) {
+  .otpActions {
+    justify-content: stretch;
+  }
+
+  .otpActions > * {
+    width: 100%;
+  }
+}

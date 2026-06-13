@@ -1,0 +1,16 @@
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  z-index: 70;
+}
+
+.bar {
+  height: 100%;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+}
+

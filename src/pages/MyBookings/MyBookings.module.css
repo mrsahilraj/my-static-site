@@ -1,0 +1,368 @@
+.page {
+  padding: 32px 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #1a0f0a;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: rgba(26, 15, 10, 0.68);
+  margin: 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 48px 24px;
+  color: rgba(26, 15, 10, 0.68);
+  font-size: 16px;
+}
+
+.empty {
+  text-align: center;
+  padding: 64px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.emptyIcon {
+  font-size: 48px;
+}
+
+.emptyTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a0f0a;
+}
+
+.emptySub {
+  font-size: 14px;
+  color: rgba(26, 15, 10, 0.68);
+}
+
+.bookingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bookingCard {
+  background: white;
+  border: 1px solid rgba(90, 68, 44, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.bookingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(251, 247, 240, 0.88));
+  border-bottom: 1px solid rgba(90, 68, 44, 0.12);
+}
+
+.bookingId {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1a0f0a;
+  letter-spacing: 0.08em;
+}
+
+.bookingStatus {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.bookingBody {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bookingInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.bookingInfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bookingLabel {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(26, 15, 10, 0.52);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bookingValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a0f0a;
+}
+
+.bookingEquipment {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.equipmentList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.equipmentTag {
+  padding: 6px 12px;
+  background: rgba(168, 112, 43, 0.1);
+  border: 1px solid rgba(168, 112, 43, 0.2);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a8702b;
+}
+
+.bookingFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(90, 68, 44, 0.2);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bookingTotal {
+  font-size: 14px;
+  color: rgba(26, 15, 10, 0.68);
+}
+
+.totalAmount {
+  font-size: 18px;
+  font-weight: 900;
+  color: #1a0f0a;
+}
+
+.bookingActions {
+  display: flex;
+  gap: 8px;
+}
+
+.bookingDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailsSectionHeader {
+  font-size: 13px;
+  font-weight: 900;
+  color: #1a0f0a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(90, 68, 44, 0.1);
+  padding-bottom: 8px;
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.detailsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detailsLabel {
+  font-size: 11px;
+  font-weight: 800;
+  color: rgba(26, 15, 10, 0.52);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.detailsValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a0f0a;
+}
+
+.detailsStatus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+
+.studioInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.studioName {
+  font-size: 16px;
+  font-weight: 900;
+  color: #1a0f0a;
+}
+
+.studioDesc {
+  font-size: 14px;
+  color: rgba(26,15,10,0.68);
+}
+
+.equipmentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.equipmentItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid rgba(90,68,44,0.1);
+  border-radius:12px;
+  background: rgba(255,255,255,0.8);
+}
+
+.equipmentName {
+  font-size:14px;
+  font-weight: 800;
+  color: #1a0f0a;
+}
+
+.equipmentQtyPrice {
+  display: flex;
+  gap: 16px;
+  font-size:13px;
+  font-weight:700;
+  color: rgba(26,15,10,0.68);
+}
+
+.equipmentTotal {
+  display: flex;
+  justify-content: flex-end;
+  padding-top:8px;
+  border-top: 1px dashed rgba(90,68,44,0.2);
+  font-size:14px;
+  color: rgba(26,15,10,0.68);
+  gap:8px;
+}
+
+.equipmentTotal span {
+  font-size: 18px;
+  font-weight: 900;
+  color: #1a0f0a;
+}
+
+.notesItem {
+  display: flex;
+  flex-direction: column;
+  gap:6px;
+}
+
+.notesLabel {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(26,15,10,0.52);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.notesText {
+  font-size: 14px;
+  color: #1a0f0a;
+  background: rgba(168,112,43,0.08);
+  padding: 10px 12px;
+  border-radius: 10px;
+}
+
+.detailsActions {
+  display: flex;
+  gap:12px;
+  justify-content: flex-end;
+  padding-top:8px;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 20px 16px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .bookingHeader {
+    padding: 14px 16px;
+  }
+
+  .bookingBody {
+    padding: 16px;
+  }
+
+  .bookingInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .bookingFooter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bookingActions {
+    width: 100%;
+  }
+
+  .bookingActions > * {
+    flex: 1;
+  }
+
+  .detailsActions {
+    flex-direction: column;
+  }
+  .detailsActions button {
+    width:100%;
+  }
+}

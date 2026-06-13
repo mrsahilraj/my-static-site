@@ -1,0 +1,121 @@
+.root {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.root::before {
+  content: '';
+  position: absolute;
+  inset: -80px;
+  background:
+    radial-gradient(240px 200px at 20% 25%, rgba(214, 180, 124, 0.25), transparent 65%),
+    radial-gradient(240px 200px at 80% 35%, rgba(192, 144, 74, 0.18), transparent 70%),
+    radial-gradient(320px 260px at 50% 85%, rgba(255, 255, 255, 0.09), transparent 70%);
+  filter: blur(14px);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 6px 2px 2px;
+}
+
+.checkWrap {
+  height: 74px;
+  width: 74px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-soft);
+}
+
+.check {
+  width: 52px;
+  height: 52px;
+  overflow: visible;
+}
+
+.checkCircle {
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 3.2;
+}
+
+.checkPath {
+  fill: none;
+  stroke: rgba(16, 12, 18, 0.92);
+  stroke-width: 4.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: checkDraw 520ms ease forwards 160ms;
+}
+
+.checkAccentRegister {
+  background: linear-gradient(180deg, rgba(214, 180, 124, 0.95), rgba(192, 144, 74, 0.95));
+  border-color: rgba(214, 180, 124, 0.55);
+}
+
+.checkAccentLogin {
+  background: linear-gradient(180deg, rgba(122, 214, 168, 0.95), rgba(72, 192, 134, 0.95));
+  border-color: rgba(122, 214, 168, 0.45);
+}
+
+.title {
+  margin: 0;
+  color: var(--text-strong);
+  font-weight: 950;
+  letter-spacing: -0.4px;
+  font-size: 18px;
+}
+
+.message {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  max-width: 46ch;
+}
+
+.actions {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@keyframes checkDraw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (min-width: 720px) {
+  .title {
+    font-size: 20px;
+  }
+  .message {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .checkPath {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+

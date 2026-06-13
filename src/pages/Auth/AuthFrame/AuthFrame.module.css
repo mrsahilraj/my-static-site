@@ -1,0 +1,74 @@
+.page {
+  display: grid;
+  place-items: center;
+  min-height: calc(100svh - 170px);
+  padding: 150px 0 50px;
+}
+
+.card {
+  width: min(520px, 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.header {
+  padding: 18px 18px 12px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 10px;
+}
+
+.brand {
+  color: var(--text-strong);
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  width: fit-content;
+}
+
+.brand:hover {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  color: var(--text-strong);
+  font-size: 20px;
+  letter-spacing: -0.4px;
+  font-weight: 920;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.body {
+  padding: 16px 18px 18px;
+}
+
+.footer {
+  padding: 14px 18px 18px;
+  border-top: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+@media (min-width: 860px) {
+  .header {
+    padding: 20px 22px 14px;
+  }
+  .body {
+    padding: 18px 22px 20px;
+  }
+  .footer {
+    padding: 16px 22px 22px;
+  }
+  .title {
+    font-size: 22px;
+  }
+}
+

@@ -1,0 +1,119 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 18px 14px;
+  background: rgba(0, 0, 0, 0.48);
+  backdrop-filter: blur(6px);
+  animation: modalFadeIn 180ms ease-out;
+}
+
+.dialog {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transform-origin: 50% 40%;
+  animation: modalPopIn 200ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.sizeSm {
+  max-width: 380px;
+}
+
+.sizeMd {
+  max-width: 520px;
+}
+
+.sizeLg {
+  max-width: 860px;
+}
+
+.header {
+  position: relative;
+  padding: 18px 52px 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.title {
+  margin: 0;
+  color: var(--text-strong);
+  font-weight: 650;
+  letter-spacing: -0.2px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.description {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 36px;
+  width: 36px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-strong);
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.close:focus-visible {
+  outline: 2px solid rgba(214, 180, 124, 0.8);
+  outline-offset: 2px;
+}
+
+.body {
+  padding: 16px 18px 18px;
+}
+
+@media (min-width: 720px) {
+  .header {
+    padding: 20px 58px 16px 20px;
+  }
+  .body {
+    padding: 18px 20px 20px;
+  }
+  .title {
+    font-size: 20px;
+  }
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop,
+  .dialog {
+    animation: none;
+  }
+}
