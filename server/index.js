@@ -354,18 +354,18 @@ app.get('/api/protected/example', requireAuth, (req, res) => {
   res.json({ ok: true, user: req.user })
 })
 
-if (process.env.NODE_ENV === 'production') {
-  const __filename = fileURLToPath(import.meta.url)
-  const __dirname = path.dirname(__filename)
-  const distDir = path.resolve(__dirname, '..', 'dist')
+// if (process.env.NODE_ENV === 'production') {
+//   const __filename = fileURLToPath(import.meta.url)
+//   const __dirname = path.dirname(__filename)
+//   const distDir = path.resolve(__dirname, '..', 'dist')
 
-  app.use(express.static(distDir))
+//   app.use(express.static(distDir))
 
-  // Express 5 compatible fallback route
-  app.use((req, res) => {
-    res.sendFile(path.join(distDir, 'index.html'))
-  })
-}
+//   // Express 5 compatible fallback route
+//   app.use((req, res) => {
+//     res.sendFile(path.join(distDir, 'index.html'))
+//   })
+// }
 
 const port = Number(process.env.PORT ?? 5177)
 app.listen(port, () => {
